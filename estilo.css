@@ -1,0 +1,394 @@
+﻿html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif, Castellar;
+}
+
+/* Colores pasteles */
+:root {
+    --rosa: #f8c8dc;
+    --fuccia: #f192ba;
+    --amarillo: #fffacd;
+    --azulf: #5468cb;
+    --azul: #b0e0e6;
+    --azulos: #80ccd7;
+    --verde: #98fb98;
+    --crema: #fff8dc;
+    --marron-claro: #d2b48c;
+    --celeste: #c8e6f8;
+    --icon-menu: url("assets/menu.svg");
+    --icon-menu-cerrar: url("assets/cerrar.svg");
+}
+
+body {
+    background-image: url("assets/fondo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado y menú */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(to top, var(--celeste), #def0fb, var(--rosa), var(--rosa), var(--rosa), white );
+}
+.logo h2 {
+    color: white;
+    display: flex;
+    font-size: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Goudy Stout;
+    text-shadow: 1px 1px 2px #000000;
+}
+.logo a {
+    font-weight: bold;
+    display: flex;
+    font-size: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black
+}
+
+.nav {
+    position: sticky;
+    top: 151px;
+    z-index: 1000;
+    padding:0;
+    display:flex;
+    background: linear-gradient(to bottom, #e5f3fc, var(--celeste), var(--azul), var(--azulos), var(--azulf));
+
+}
+
+    nav li {
+        margin: 0;
+        flex: 1;
+        align-items: stretch;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+    }
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        display: flex;
+    }
+
+    nav a {
+        display: block;
+        text-decoration: none;
+        color: #8b4513;
+        font-weight: bold;
+        padding: 8px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    nav as {
+        display: block;
+        text-decoration: none;
+        color: #8b4513;
+        font-weight: bold;
+        padding: 8px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        display: flex;
+        background: linear-gradient(to top, var(--azul), var(--fuccia), var(--rosa), white );
+    }
+    @media (width < 764px){
+    header{
+        position: sticky;
+        z-index: 1000;
+    }
+    .logo h2 {
+    font-size: 30px;
+    }
+    .logo a {
+    font-size: 15px;
+    }
+    .nav {
+        position: sticky;
+        top: 138px;
+        z-index: 800;
+        padding:0;
+        display: flex;
+        height: 50px;
+        --menu-mostrar: translate(-100%);
+    }
+    .nav_toggle{
+        margin-left: auto;
+        width: 50px;
+        height: 50px;
+        background-image: var(--icon-menu);
+        background-size: cover;
+        margin-top: 5px;
+        margin-bottom: 2px;
+        cursor: pointer;
+        z-index: 500;
+        transition: background-image .5s;
+    }
+    .nav_ul {
+        transform: var(--menu-mostrar);
+        background-image: url(assets/fondo2.jpg);
+        position: fixed;
+        top: 188px;
+        place-content: center;
+        list-style: none;
+        gap: 2rem;
+        padding: -5rem 5%;
+        text-align: center;
+        display: grid;
+        height: 470px;
+        transition: .5s transform;
+    }
+    nav li {
+        margin: 0;
+        flex: 1;
+        align-items: stretch;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+    }
+    nav a {
+        display: block;
+        text-decoration: none;
+        color: #8b4513;
+        font-weight: bold;
+        padding: 8px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    nav as {
+        display: block;
+        text-decoration: none;
+        color: #8b4513;
+        font-weight: bold;
+        padding: 8px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        display: flex;
+        background: linear-gradient(to top, var(--azul), var(--fuccia), var(--rosa), white );
+    }
+    .nav_input{
+        display:none;
+    }
+    .nav:has(.nav_input:checked){
+        .nav_toggle{
+        background-image: var(--icon-menu-cerrar);
+        }
+        --menu-mostrar: translate(0);
+    }
+    }
+/* Sección principal */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: var(--fuccia);
+    text-shadow: 2px 2px 3px black;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #5a4a3f;
+    margin-bottom: 2rem;
+    background-color: #f8c8dc;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    display: inline-block;
+}
+/* Secciones generales */
+.section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #8b4513;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--rosa);
+    padding-bottom: 0.5rem;
+}
+
+/* Menú */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.menu-card {
+    background-color: var(--crema);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+    .menu-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .menu-card h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    .menu-card .precio-chiquis {
+        color: #4682b4;
+    }
+
+    .menu-card .precio-chicuelito {
+        color: #db7093;
+    }
+
+    .menu-card .precio-pequenin {
+        color: #ffd700;
+    }
+
+    .menu-card .precio-chicuelita {
+        color: #32cd32;
+    }
+
+    .menu-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* Historia */
+.historia-container {
+    border-radius:20px;
+    background-color:var(--crema);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.historia-img {
+    flex: 1 1 300px;
+}
+
+    .historia-img img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+.historia-text {
+    flex: 1 1 300px;
+    line-height: 1.8;
+}
+
+/* Envío */
+.envio-container {
+    background-color: var(--crema);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    line-height: 1.8;
+}
+
+    .envio-container ul {
+        list-style: none;
+        margin: 1.5rem 0;
+    }
+
+/* Sugerencias */
+.formulario-sugerencias {
+    background-color: var(--azul);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.btn-enviar {
+    background-color: var(--verde);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Pie de página */
+footer {
+    position:relative;
+    width:100%;
+    background-color: var(--rosa);
+    text-align: center;
+    padding: 20px 50px;
+    color: #8b4513;
+}
+
+/* Frase destacada */
+.frase-destacada {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #8b4513;
+    padding: 1rem;
+    font-weight: bold;
+}
